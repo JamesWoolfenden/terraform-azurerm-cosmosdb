@@ -17,3 +17,10 @@ variable "resource_group" {
     name     = ""
   }
 }
+
+
+variable "table_name" {
+  type        = string
+  default     = "tfex-cosmos-table"
+  description = "(optional) describe your variable"
+}
