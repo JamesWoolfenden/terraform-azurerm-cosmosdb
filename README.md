@@ -1,5 +1,3 @@
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-azurerm-cosmosdb
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb)
@@ -29,21 +27,22 @@ module "cosmosdb" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Providers
 
-| Name | Version |
-|------|---------|
-| azurerm | n/a |
+| Name    | Version |
+| ------- | ------- |
+| azurerm | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
-| account\_name | n/a | `string` | n/a | yes |
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
-| failover\_location | n/a | `string` | n/a | yes |
-| resource\_group | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
-| table\_name | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
+| Name              | Description                                        | Type     | Default                                              | Required |
+| ----------------- | -------------------------------------------------- | -------- | ---------------------------------------------------- | :------: |
+| account_name      | n/a                                                | `string` | n/a                                                  |   yes    |
+| common_tags       | This is to help you add tags to your cloud objects | `map`    | n/a                                                  |   yes    |
+| failover_location | n/a                                                | `string` | n/a                                                  |   yes    |
+| resource_group    | n/a                                                | `map`    | <pre>{<br> "location": "",<br> "name": ""<br>}</pre> |    no    |
+| table_name        | (optional) describe your variable                  | `string` | `"tfex-cosmos-table"`                                |    no    |
 
 ## Outputs
 
@@ -71,7 +70,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azur
 
 ## Copyrights
 
-Copyright � 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright � 2019-2020 James Woolfenden
 
 ## License
 
@@ -80,19 +79,19 @@ Copyright � 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -102,12 +101,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-azurerm-cosmosdb&url=https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-azurerm-cosmosdb&url=https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb
