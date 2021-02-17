@@ -31,22 +31,25 @@ module "cosmosdb" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
 
 ## Providers
 
-| Name    | Version |
-| ------- | ------- |
-| azurerm | n/a     |
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
 
 ## Inputs
 
-| Name              | Description                                        | Type     | Default                                              | Required |
-| ----------------- | -------------------------------------------------- | -------- | ---------------------------------------------------- | :------: |
-| account_name      | n/a                                                | `string` | n/a                                                  |   yes    |
-| common_tags       | This is to help you add tags to your cloud objects | `map`    | n/a                                                  |   yes    |
-| failover_location | n/a                                                | `string` | n/a                                                  |   yes    |
-| resource_group    | n/a                                                | `map`    | <pre>{<br> "location": "",<br> "name": ""<br>}</pre> |    no    |
-| table_name        | (optional) describe your variable                  | `string` | `"tfex-cosmos-table"`                                |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| account\_name | n/a | `string` | n/a | yes |
+| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| failover\_location | n/a | `string` | n/a | yes |
+| resource\_group | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
+| table\_name | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
 
 ## Outputs
 

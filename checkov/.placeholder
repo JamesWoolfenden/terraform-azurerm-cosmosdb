@@ -1,0 +1,7 @@
+new tests for CosmosDB
+
+Public access is disabled
+public_network_access_enabled - (Optional) Whether or not public network access is allowed for this CosmosDB account.
+
+key_vault_key_id is set for this resource
+key_vault_key_id - (Optional) A versionless Key Vault Key ID for CMK encryption. Changing this forces a new resource to be created.
