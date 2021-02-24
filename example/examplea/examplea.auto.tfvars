@@ -1,5 +1,6 @@
 common_tags = {
-  stage = "development"
+  createdby = "Terraform"
+  module    = "terraform-azurerm-cosmodb"
 }
 
 resource_group_name = "examplea"

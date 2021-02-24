@@ -16,7 +16,7 @@ variable "location" {
 variable "failover_location" {
   type        = string
   description = "Azure Region to use to fail over to"
-  default     = "EU North"
+  default     = "France South"
 }
 
 variable "account_name" {

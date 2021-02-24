@@ -18,9 +18,32 @@ variable "resource_group" {
   }
 }
 
-
 variable "table_name" {
   type        = string
   default     = "tfex-cosmos-table"
   description = "(optional) describe your variable"
+}
+
+variable "offer_type" {
+  type    = string
+  default = "Standard"
+}
+
+variable "kind" {
+  type    = string
+  default = "GlobalDocumentDB"
+}
+
+variable "ip_range_filter" {
+  type    = string
+  default = ""
+}
+
+variable "rules" {
+  type    = list(any)
+  default = []
+}
+
+variable "key_vault_key_id" {
+  default = ""
 }

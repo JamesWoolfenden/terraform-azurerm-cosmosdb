@@ -41,6 +41,17 @@ No requirements.
 |------|---------|
 | azurerm | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [azurerm_cosmosdb_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account) |
+| [azurerm_cosmosdb_table](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_table) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -48,13 +59,18 @@ No requirements.
 | account\_name | n/a | `string` | n/a | yes |
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | failover\_location | n/a | `string` | n/a | yes |
+| ip\_range\_filter | n/a | `string` | `""` | no |
+| key\_vault\_key\_id | n/a | `string` | `""` | no |
+| kind | n/a | `string` | `"GlobalDocumentDB"` | no |
+| offer\_type | n/a | `string` | `"Standard"` | no |
 | resource\_group | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
+| rules | n/a | `list(any)` | `[]` | no |
 | table\_name | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
+| throughput | n/a | `number` | `400` | no |
 
 ## Outputs
 
 No output.
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
