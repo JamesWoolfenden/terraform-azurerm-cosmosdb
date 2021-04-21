@@ -5,12 +5,8 @@ resource "azurerm_cosmosdb_account" "db" {
   offer_type          = var.offer_type
   kind                = var.kind
 
-  enable_automatic_failover = true
-
-  /*dynamic block
-  capabilities {
-    name = var.capabilities_name
-  }*/
+  enable_automatic_failover     = true
+  public_network_access_enabled = false
 
   consistency_policy {
     consistency_level       = "BoundedStaleness"

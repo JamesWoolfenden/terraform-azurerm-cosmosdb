@@ -39,38 +39,38 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_cosmosdb_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account) |
-| [azurerm_cosmosdb_table](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_table) |
+| Name | Type |
+|------|------|
+| [azurerm_cosmosdb_account.db](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account) | resource |
+| [azurerm_cosmosdb_table.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_table) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_name | n/a | `string` | n/a | yes |
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| failover\_location | n/a | `string` | n/a | yes |
-| ip\_range\_filter | n/a | `string` | `""` | no |
-| key\_vault\_key\_id | n/a | `string` | `""` | no |
-| kind | n/a | `string` | `"GlobalDocumentDB"` | no |
-| offer\_type | n/a | `string` | `"Standard"` | no |
-| resource\_group | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
-| rules | n/a | `list(any)` | `[]` | no |
-| table\_name | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
-| throughput | n/a | `number` | `400` | no |
+| <a name="input_account_name"></a> [account\_name](#input\_account\_name) | n/a | `string` | n/a | yes |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_failover_location"></a> [failover\_location](#input\_failover\_location) | n/a | `string` | n/a | yes |
+| <a name="input_ip_range_filter"></a> [ip\_range\_filter](#input\_ip\_range\_filter) | n/a | `string` | `""` | no |
+| <a name="input_key_vault_key_id"></a> [key\_vault\_key\_id](#input\_key\_vault\_key\_id) | n/a | `string` | `""` | no |
+| <a name="input_kind"></a> [kind](#input\_kind) | n/a | `string` | `"GlobalDocumentDB"` | no |
+| <a name="input_offer_type"></a> [offer\_type](#input\_offer\_type) | n/a | `string` | `"Standard"` | no |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
+| <a name="input_rules"></a> [rules](#input\_rules) | n/a | `list(any)` | `[]` | no |
+| <a name="input_table_name"></a> [table\_name](#input\_table\_name) | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
+| <a name="input_throughput"></a> [throughput](#input\_throughput) | n/a | `number` | `400` | no |
 
 ## Outputs
 
-No output.
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
