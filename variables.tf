@@ -44,6 +44,5 @@ variable "rules" {
   default = []
 }
 
-variable "key_vault_key_id" {
-  default = ""
+variable "key_vault_key" {
 }

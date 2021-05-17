@@ -14,14 +14,13 @@ resource "azurerm_cosmosdb_account" "db" {
     max_staleness_prefix    = 200
   }
 
-  //dyamic block
+  //dynamic block
   geo_location {
     location          = var.failover_location
     failover_priority = 1
   }
 
   geo_location {
-    prefix            = var.account_name
     location          = var.resource_group.location
     failover_priority = 0
   }
@@ -30,7 +29,7 @@ resource "azurerm_cosmosdb_account" "db" {
   enable_free_tier                  = false
   analytical_storage_enabled        = false
   is_virtual_network_filter_enabled = false
-  key_vault_key_id                  = var.key_vault_key_id
+  key_vault_key_id                  = var.key_vault_key.id
   enable_multiple_write_locations   = false
 
   dynamic "virtual_network_rule" {
