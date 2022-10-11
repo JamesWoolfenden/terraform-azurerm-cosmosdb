@@ -40,4 +40,6 @@ resource "azurerm_cosmosdb_account" "db" {
     }
   }
 
+  access_key_metadata_writes_enabled = false
+  local_authentication_disabled      = true
 }

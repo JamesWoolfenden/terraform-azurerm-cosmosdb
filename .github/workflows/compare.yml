@@ -2,8 +2,6 @@
 # yamllint disable rule:line-length
 name: Compare
 on:
-  schedule:
-    - cron: "00 7 * * SAT"
   workflow_dispatch:
 
 env:
@@ -59,6 +57,7 @@ jobs:
         with:
           ref: ${{ env.branch }}
           token: ${{ github.token }}
+          fetch-depth: '0'
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
