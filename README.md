@@ -25,8 +25,9 @@ Include **module.cosmosdb.tf** this repository as a module in your existing terr
 module "cosmosdb" {
   source         = "JamesWoolfenden/cosmosdb/azurerm"
   common_tags    = var.common_tags
-  resource_group = azurerm_resource_group.example
-  azurerm_subnet = azurerm_subnet.internal
+  account_name      = var.account_name
+  failover_location = var.failover_location
+  key_vault_key     = azurerm_key_vault_key.generated
 }
 ```
 
@@ -61,9 +62,9 @@ No modules.
 | <a name="input_failover_location"></a> [failover\_location](#input\_failover\_location) | n/a | `string` | n/a | yes |
 | <a name="input_ip_range_filter"></a> [ip\_range\_filter](#input\_ip\_range\_filter) | n/a | `string` | `""` | no |
 | <a name="input_key_vault_key"></a> [key\_vault\_key](#input\_key\_vault\_key) | n/a | `any` | n/a | yes |
-| <a name="input_kind"></a> [kind](#input\_kind) | n/a | `string` | `"GlobalDocumentDB"` | no |
+| <a name="input_kind"></a> [kind](#input\_kind) | n/a | `string` | n/a | yes |
 | <a name="input_offer_type"></a> [offer\_type](#input\_offer\_type) | n/a | `string` | `"Standard"` | no |
-| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `map` | <pre>{<br>  "location": "",<br>  "name": ""<br>}</pre> | no |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `any` | n/a | yes |
 | <a name="input_rules"></a> [rules](#input\_rules) | n/a | `list(any)` | `[]` | no |
 | <a name="input_table_name"></a> [table\_name](#input\_table\_name) | (optional) describe your variable | `string` | `"tfex-cosmos-table"` | no |
 | <a name="input_throughput"></a> [throughput](#input\_throughput) | n/a | `number` | `400` | no |
@@ -78,6 +79,45 @@ No outputs.
 This is the policy required to build this project:
 
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
+The Terraform resource required is:
+
+```golang
+
+resource "azurerm_role_definition" "terraform_pike" {
+  role_definition_id = local.uuid
+  name               = "terraform_pike"
+  scope              = data.azurerm_subscription.primary.id
+
+  permissions {
+    actions = [
+    "Microsoft.DocumentDB/databaseAccounts/delete",
+    "Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/action",
+    "Microsoft.DocumentDB/databaseAccounts/listKeys/action",
+    "Microsoft.DocumentDB/databaseAccounts/read",
+    "Microsoft.DocumentDB/databaseAccounts/readonlykeys/action",
+    "Microsoft.DocumentDB/databaseAccounts/tables/delete",
+    "Microsoft.DocumentDB/databaseAccounts/tables/read",
+    "Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings/read",
+    "Microsoft.DocumentDB/databaseAccounts/tables/write",
+    "Microsoft.DocumentDB/databaseAccounts/write",
+    "Microsoft.Resources/subscriptions/resourcegroups/read"]
+    not_actions = []
+  }
+
+  assignable_scopes = [
+    data.azurerm_subscription.primary.id,
+  ]
+}
+
+locals {
+  uuid = uuid()
+}
+
+data "azurerm_subscription" "primary" {
+}
+
+
+```
 <!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
 
 ## Related Projects

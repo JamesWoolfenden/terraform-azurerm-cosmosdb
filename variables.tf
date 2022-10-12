@@ -12,10 +12,6 @@ variable "failover_location" {
 }
 
 variable "resource_group" {
-  default = {
-    location = ""
-    name     = ""
-  }
 }
 
 variable "table_name" {
@@ -30,8 +26,7 @@ variable "offer_type" {
 }
 
 variable "kind" {
-  type    = string
-  default = "GlobalDocumentDB"
+  type = string
 }
 
 variable "ip_range_filter" {

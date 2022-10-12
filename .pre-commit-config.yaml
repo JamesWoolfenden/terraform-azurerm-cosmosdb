@@ -48,13 +48,13 @@ repos:
       - id: tf2docs
         language_version: python3.8
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 2.1.264
+    rev: 2.1.267
     hooks:
       - id: checkov
         verbose: true
         entry: checkov -d example/examplea --external-checks-dir checkov
   - repo: https://github.com/jameswoolfenden/pike
-    rev: v0.2.5
+    rev: v0.2.9
     hooks:
       - id: pike-docs-go
         args: ["readme", "-i", "-d", "."]
