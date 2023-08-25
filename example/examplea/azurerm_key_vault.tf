@@ -1,8 +1,9 @@
 data "azurerm_client_config" "current" {}
 
-#tfsec:ignore:AZU020
-#tfsec:ignore:AZU026
+
 resource "azurerm_key_vault" "example" {
+  #checkov:skip=CKV_AZURE_189: example"
+  #checkov:skip=CKV2_AZURE_32: example
   name                       = "examplekeyvault"
   location                   = azurerm_resource_group.example.location
   resource_group_name        = azurerm_resource_group.example.name
