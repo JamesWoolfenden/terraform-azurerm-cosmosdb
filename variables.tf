@@ -14,6 +14,11 @@ variable "failover_location" {
 variable "resource_group" {
 }
 
+variable "location" {
+  type        = string
+  description = ""
+}
+
 variable "table_name" {
   type        = string
   default     = "tfex-cosmos-table"
@@ -39,5 +44,7 @@ variable "rules" {
   default = []
 }
 
-variable "key_vault_key" {
+variable "key_vault_key_id" {
+  type        = string
+  description = "(optional) describe your variable"
 }
