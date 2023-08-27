@@ -61,8 +61,9 @@ No modules.
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | <a name="input_failover_location"></a> [failover\_location](#input\_failover\_location) | n/a | `string` | n/a | yes |
 | <a name="input_ip_range_filter"></a> [ip\_range\_filter](#input\_ip\_range\_filter) | n/a | `string` | `""` | no |
-| <a name="input_key_vault_key"></a> [key\_vault\_key](#input\_key\_vault\_key) | n/a | `any` | n/a | yes |
+| <a name="input_key_vault_key_id"></a> [key\_vault\_key\_id](#input\_key\_vault\_key\_id) | (optional) describe your variable | `string` | n/a | yes |
 | <a name="input_kind"></a> [kind](#input\_kind) | n/a | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | n/a | `string` | n/a | yes |
 | <a name="input_offer_type"></a> [offer\_type](#input\_offer\_type) | n/a | `string` | `"Standard"` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | n/a | `any` | n/a | yes |
 | <a name="input_rules"></a> [rules](#input\_rules) | n/a | `list(any)` | `[]` | no |

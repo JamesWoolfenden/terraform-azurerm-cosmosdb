@@ -18,8 +18,3 @@ variable "failover_location" {
   description = "Azure Region to use to fail over to"
   default     = "France South"
 }
-
-variable "account_name" {
-  type    = string
-  default = "myfirstaccount"
-}

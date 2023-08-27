@@ -1,7 +1,7 @@
 resource "azurerm_cosmosdb_account" "db" {
   name                = var.account_name
-  location            = var.resource_group.location
-  resource_group_name = var.resource_group.name
+  location            = var.location
+  resource_group_name = var.resource_group
   offer_type          = var.offer_type
   kind                = var.kind
 
@@ -10,8 +10,8 @@ resource "azurerm_cosmosdb_account" "db" {
 
   consistency_policy {
     consistency_level       = "BoundedStaleness"
-    max_interval_in_seconds = 10
-    max_staleness_prefix    = 200
+    max_interval_in_seconds = 300
+    max_staleness_prefix    = 100000
   }
 
   //dynamic block
@@ -21,7 +21,7 @@ resource "azurerm_cosmosdb_account" "db" {
   }
 
   geo_location {
-    location          = var.resource_group.location
+    location          = var.location
     failover_priority = 0
   }
 
@@ -29,7 +29,7 @@ resource "azurerm_cosmosdb_account" "db" {
   enable_free_tier                  = false
   analytical_storage_enabled        = false
   is_virtual_network_filter_enabled = false
-  key_vault_key_id                  = var.key_vault_key.id
+  key_vault_key_id                  = var.key_vault_key_id
   enable_multiple_write_locations   = false
 
   dynamic "virtual_network_rule" {
