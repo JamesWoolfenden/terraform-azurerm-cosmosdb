@@ -1,6 +1,6 @@
 # terraform-azurerm-cosmosdb
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb/workflows/Verify/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-azurerm-cosmosdb.svg)](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-azurerm-cosmosdb.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-azurerm-cosmosdb/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
@@ -140,7 +140,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azur
 
 ## Copyrights
 
-Copyright © 2019-2022 James Woolfenden
+Copyright © 2019-2023 James Woolfenden
 
 ## License
 
