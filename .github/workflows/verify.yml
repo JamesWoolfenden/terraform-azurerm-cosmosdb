@@ -18,7 +18,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Do not change
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Do not change
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,17 +40,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-terraform-
       - name: Terraform Init
-        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: init
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
-      - name: Terraform Validate
-        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
-        with:
-          tf_actions_version: ${{ env.terraform }}
-          tf_actions_subcommand: validate
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
+        id: init
+        run: terraform init
+        working-directory: ${{ env.tf_target_dir }}
+      - name: Terraform validate
+        id: validate
+        run: terraform validate
+        working-directory: ${{ env.tf_target_dir }}
+      - name: Terraform plan
+        id: plan
+        run: terraform plan
+        working-directory: ${{ env.tf_target_dir }}
   security:
     runs-on: ubuntu-latest
     env:
